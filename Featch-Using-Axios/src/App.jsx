@@ -1,65 +1,58 @@
 import { useState, useEffect } from "react";
 import axios from "./axios";
 import "./App.css";
-// const Api = "https://jsonplaceholder.typicode.com";
+// const baseUrl = "https://jsonplaceholder.typicode.com";
 function App() {
   const [myData, setMyData] = useState([]);
   const [isError, setIsError] = useState("");
-
-  // First Method
-  // using promises
+  // Using Promises
   // useEffect(() => {
   //   axios
-  //     .get("https://jsonplaceholder.typicode.com/posts")
+  //     .get("https://jsonplaceholder.typicode.com/post")
   //     .then((res) => {
   //       setMyData(res.data);
   //     })
-  //     .catch((error) => {
-  //       setIsError(error.message);
-  //       // console.log(error.message);
+  //     .catch((err) => {
+  //       setIsError(err.message);
   //     });
   // }, []);
 
-  // Second Method
-  // using asyn await
-  const getApi = async () => {
+  // Using Async Await
+  const Api = async () => {
     try {
-      const res = await axios.get("/comments");
-      setMyData(res.data);
-    } catch (error) {
-      setIsError(error.message);
+      const apiData = await axios.get("/posts");
+      setMyData(apiData.data);
+    } catch (err) {
+      setIsError(err.message);
     }
   };
-
-  useEffect(() => {});
-  getApi();
+  useEffect(() => {
+    Api();
+  }, []);
   return (
     <>
-      <h1>Table ForMat</h1>
-      {isError !== "" && <h2>{isError}</h2>}
-
+      <h1>Featch Example Using Axios</h1>
+      {isError !== "" && <h1>{isError}</h1>}
       <table>
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
+            <th>ID</th>
+            <th>Title</th>
             <th>Body</th>
           </tr>
         </thead>
-        <tbody>
-          {myData.slice(0, 10).map((post) => {
-            const { id, name, email, body } = post;
-            return (
-              <tr className="table" key={id}>
+        {myData.slice(0, 10).map((data) => {
+          const { id, title, body } = data;
+          return (
+            <tbody key={id}>
+              <tr className="table">
                 <td>{id}</td>
-                <td>{name.slice(0, 15).toUpperCase()}</td>
-                <td>{email}</td>
+                <td>{title.slice(0, 15).toUpperCase()}</td>
                 <td>{body.slice(0, 100)}</td>
               </tr>
-            );
-          })}
-        </tbody>
+            </tbody>
+          );
+        })}
       </table>
     </>
   );
