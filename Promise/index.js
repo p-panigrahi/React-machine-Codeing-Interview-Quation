@@ -3,7 +3,6 @@
 //   const isBorded = true;
 //   if (isBorded) {
 //     resolve("Are you in a flight");
-//     c;
 //   } else {
 //     reject("Your Flight is Cancel");
 //   }
