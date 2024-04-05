@@ -6,18 +6,9 @@ const companies = [
   { name: "Mindtree", category: "Service Based", start: "2000", end: "2014" },
 ];
 
-const age = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
-
-// for (let i = 0; i < age.length; i++) {
-//   if (age[i] >= 30) {
-//     console.log(age[i]);
-//   }
+const age = [33,12,20,16,5,54,21,44,61,13,15,45,25,64,32];
+ 
+// for(let i = 0; i <= companies.length; i++){
+//   console.log(companies[i]);
 // }
-// const result = age.filter((item,index)=>{
-//   if(item >= 30){
-//     return true;
-//   }
-// });
-// console.log(result);
-const result = companies.filter(item => item.category === "Service Based");
-console.log(result);
+companies.forEach((item,index)=>(console.log(item)));
