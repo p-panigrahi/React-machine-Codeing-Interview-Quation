@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Child from "./Child";
+
 const Parent = () => {
-  const [data, setData] = useState("rakesh");
+  const [data, setData] = useState("Ranjan Kumar Panigrahi");
   return (
     <>
-      <h1>Parent Component {data}</h1>
-      <Child setData={setData} />
+      <div>I Parent {data}</div>
+      <Child setData={setData}/>
     </>
   );
 };
