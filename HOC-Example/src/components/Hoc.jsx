@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useState } from 'react';
 
-const Hoc = (WapperComp) => {
-  return ()=>{
-    const [count, setCount] = useState(0);
-    const hnadelClick = () => {
+const HOC = (WarpperComp)=>{
+  return (()=>{
+    const [count,setCount] = useState(0);
+    const handelClick = ()=>{
       setCount(count + 1);
-    };
-    return(
+    }
+    return (
       <div>
-        <WapperComp count={count} hnadelClick={hnadelClick}/>
+        <WarpperComp handelClick={handelClick} count={count}/>
       </div>
     )
-  };
+  })
 }
-
-export default Hoc
+export default HOC;

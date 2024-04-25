@@ -1,16 +1,17 @@
-import "./App.css";
-// import Child from "./child";
-import React, { Suspense } from "react";
+import React from "react";
+import { Suspense } from "react";
+// import Child from './child';
 const ChildComp = React.lazy(() => import("./child.jsx"));
-function App() {
+
+const App = () => {
   return (
-    <>
-      <h1>LazyLoading Example</h1>
-      <Suspense fallback={<h1>please wait ......</h1>}>
+    <div>
+      <h1>I am Second Parent</h1>
+      <Suspense fallback={'Loading....'}>
         <ChildComp />
       </Suspense>
-    </>
+    </div>
   );
-}
+};
 
 export default App;

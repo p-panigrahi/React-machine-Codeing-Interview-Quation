@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import Hoc from "./Hoc";
-const A = ({ hnadelClick, count }) => {
+import React from 'react'
+import HOC from './Hoc';
+
+const A = ({handelClick,count}) => {
+
   return (
     <div>
       <h1>{count}</h1>
-      <button onClick={hnadelClick}>A</button>
+      <button onClick={handelClick}>Click A</button>
     </div>
-  );
-};
+  )
+}
 
-export default Hoc(A);
+export default HOC(A);

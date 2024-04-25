@@ -1,7 +1,8 @@
-import React from "react";
-
+import React from 'react'
 const child = () => {
-  return <h2>child</h2>;
-};
+  return (
+    <div> I am child</div>
+  )
+}
 
-export default child;
+export default child

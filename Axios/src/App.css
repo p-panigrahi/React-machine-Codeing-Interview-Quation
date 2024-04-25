@@ -1,0 +1,10 @@
+.card{
+  padding: 2rem;
+  border: 2px solid black;
+}
+.grid{
+  display: grid;
+  max-width: 120rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.6rem;
+}
