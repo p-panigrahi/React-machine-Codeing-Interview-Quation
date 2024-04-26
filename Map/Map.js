@@ -6,17 +6,9 @@ const companies = [
   { name: "Mindtree", category: "Service Based", start: "2000", end: "2014" },
 ];
 
-const age = [33,12,20,16,5,54,21,44,61,13,15,45,25,64,32];
- 
-// Normal iterate 
-// for(let i = 0; i<=companies.length; i++){
-//   console.log(companies[i]);
-// }
+const age = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
-// using foeEach
-// companies.forEach((item,index)=>{
-//   console.log(item.name);
-// })
-
-// writeing one line
-companies.forEach((item,index)=>(console.log(item.name)));
+const itemMap = companies.map((item)=>{
+  return item.name;
+})
+console.log(itemMap);

@@ -8,16 +8,28 @@ const companies = [
 
 const age = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
-// for (let i = 0; i < age.length; i++) {
-//   if (age[i] >= 30) {
+// Normal 
+// for(let i = 0; i<=age.length;i++){
+//   if(age[i] >= 20){
 //     console.log(age[i]);
 //   }
 // }
-// const result = age.filter((item,index)=>{
-//   if(item >= 30){
+
+// using filter 
+// const FinalAge = age.filter((item)=>{
+//   if(item >= 20){
 //     return true;
 //   }
-// });
-// console.log(result);
-const result = companies.filter(item => item.category === "Service Based");
-console.log(result);
+// })
+// console.log(FinalAge);
+
+// const Finalage = companies.filter((item)=>{
+//   if(item.category === "Product Based"){
+//     return true;
+//   }
+// })
+// console.log(Finalage);
+
+// shoutcut
+// const FinalAge = companies.filter(item => (item.category === "Product Based"));
+// console.log(FinalAge);
