@@ -1,75 +1,66 @@
-// This Synchronous way
-// const ticket = new Promise((resolve, reject) => {
-//   const isBorded = true;
-//   if (isBorded) {
-//     resolve("Are you in a flight");
-//   } else {
-//     reject("Your Flight is Cancel");
+// const ticket = new Promise(function(resolve, reject){
+//   const isTicket = true;
+//   if(isTicket){
+//     resolve("You are in Flight now");
+//   }else{
+//     reject("Your Flight will be cancelled ");
 //   }
-// });
-// ticket
-//   .then((data) => {
-//     console.log("OOO Ok", data);
-//   })
-//   .catch((err) => {
-//     console.log("OO No", err);
-//   });
+// })
+// ticket.then((data)=>{
+//   console.log("Wow",data);
+// }).catch((data)=>{
+//   console.log("OOO No",data);
+// }).finally("Process Is Ended");
 
-// Asynchronous way
-function getChesse() {
+// Make Pizza
+function getCheese() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const Chese = "Chese";
-      resolve(Chese);
+      const cheese = "Cheese";
+      resolve(cheese);
     }, 2000);
   });
 }
-function makeDough(Chese) {
+function makeDough(cheese) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const Dough = Chese + "Dough";
-      // resolve(Dough);
-      reject(Dough);
-    }, 3000);
+      const dough = cheese + "dough";
+      resolve(dough);
+    }, 4000);
   });
 }
-function makePizza(Dough) {
+function makePizza(dough) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const Pizza = Dough + "Pizza";
-      resolve(Pizza);
-    }, 2000);
+      const pizza = dough + "pizza";
+      reject(pizza);
+    }, 6000);
   });
 }
-
-async function orderPizza() {
+async function getOrder() {
   try {
-    const Chese = await getChesse();
-    console.log("Here is the Chese");
+    const cheese = await getCheese();
+    console.log("Here is te Cheese", cheese);
 
-    const Dough = await makeDough(Chese);
-    console.log("Here is the Dough");
+    const dough = await makeDough(cheese);
+    console.log("Here is te dough", dough);
 
-    const Pizza = await makePizza(Dough);
-    console.log("Here is the Pizza ");
-  } catch (err) {
-    console.log("Poor Dough");
+    const pizza = await makePizza(dough);
+    console.log("Here is te pizza", pizza);
+  } catch (error) {
+    console.log("There was an error",error)
   }
 }
-orderPizza();
+getOrder();
 
-// getChesse()
-//   .then((Chese) => {
-//     console.log("Here is the Chese");
-//     return makeDough(Chese);
+// getCheese()
+//   .then((cheese) => {
+//     return makeDough(cheese);
 //   })
-//   .then((Dough) => {
-//     console.log("Here is the Dough");
-//     return makePizza(Dough);
+//   .then((dough) => {
+//     return makePizza(dough);
 //   })
-//   .then((Pizza) => {
-//     console.log("Here is the Pizza ");
-//   })
-//   .catch((err) => {
-//     console.log("Poor Dough");
+//   .then((pizza) => {
+//   }).catch((err) => {
+//     console.log("Bad Product",err);
 //   });
