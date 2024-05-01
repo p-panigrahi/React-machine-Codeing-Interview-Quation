@@ -1,10 +1,10 @@
 const age = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
-let total = 0;
-for(let i = 0; i<age.length; i++){
-  total = total +age[i];
-}
-console.log(total);
+// let total = 0;
+// for(let i = 0; i<age.length; i++){
+//   total = total +age[i];
+// }
+// console.log(total);
 
 const SumofAge = age.reduce((total,age)=> (total + age),0);
 console.log(SumofAge);
