@@ -1,16 +1,13 @@
-import React from 'react'
-import Child from './Child'
-import { useState } from 'react'
+import React from "react";
+import Child from "./Child";
 
 const Parent = () => {
-  const [data,setData] = useState('Aman');
   return (
-    <>
+    <div>
+      <h1>I am Parent</h1>
+      <Child name="Aman" />
+    </div>
+  );
+};
 
-    <div>I am Parent</div>
-    <Child data={data}/>
-    </>
-  )
-}
-
-export default Parent
+export default Parent;

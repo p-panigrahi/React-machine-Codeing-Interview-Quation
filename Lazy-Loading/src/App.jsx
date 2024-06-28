@@ -1,12 +1,12 @@
 import React from "react";
-import Child from "./Child";
 import { Suspense } from "react";
-const ChildCom = React.lazy(() => import("./Child"));
+const LazyCom = React.lazy(() => import("./Child"));
 const App = () => {
   return (
     <div>
-      <Suspense fallback="Loading.....">
-        <ChildCom />
+      <h1>Lazyloading Example</h1>
+      <Suspense fallback="Loading......">
+        <LazyCom />
       </Suspense>
     </div>
   );

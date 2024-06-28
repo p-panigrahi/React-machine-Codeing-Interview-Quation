@@ -2,21 +2,16 @@ import React, { useState } from "react";
 
 const App = () => {
   const [count, setCount] = useState(0);
-  const handelCount = () => {
-    setCount((prev)=>prev + 1);
-    setCount((prev)=>prev + 1);
-    setCount((prev)=>prev + 1);
-    setCount((prev)=>prev + 1);
-    setCount((prev)=>prev + 1);
-    setCount((prev)=>prev + 1);
+  const handelClick = () => {
+    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
   };
   return (
     <div>
-      <h1>Use State Example</h1>
-      <br />
-      <br />
-      <br />
-      <button onClick={handelCount}>CounterValue - {count}</button>
+      <h1>Use State Hook Example</h1>
+      <button onClick={handelClick}>Increace - {count}</button>
     </div>
   );
 };

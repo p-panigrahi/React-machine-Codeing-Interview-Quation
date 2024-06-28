@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Child = ({data}) => {
+const Child = ({ name }) => {
   return (
-    <div>i am {data}</div>
-  )
-}
+    <div>
+      <h1>I am {name}</h1>
+    </div>
+  );
+};
 
-export default Child
+export default Child;

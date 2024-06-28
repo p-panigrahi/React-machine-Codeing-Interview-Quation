@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
 
-const Child = ({setData}) => {
+const Child = ({ setFn }) => {
   return (
     <div>
-      <button onClick={()=>setData('Sanjukta Panigrahi')}>Click To Add</button>
+      <h1>Hello I am Child</h1>
+      <button onClick={() => setFn("Ranjan Kumar Panigrahi")}>
+        lick Me To Update Parent Data
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Child
+export default Child;

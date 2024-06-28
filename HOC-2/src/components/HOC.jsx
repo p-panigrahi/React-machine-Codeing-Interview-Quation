@@ -1,14 +1,16 @@
 import { useState } from "react";
 
-const HOC = (WrapperComp) => {
+const HOC = (WapperCom) => {
   return () => {
-    const [data, setData] = useState(0);
-
-    const handelClick = () => {
-      setData(data + 1);
+    const [count, setCount] = useState(0);
+    const handelCount = () => {
+      setCount((prev) => prev + 1);
     };
-    return <WrapperComp data={data} handelClick={handelClick} />;
+    return (
+      <div>
+        <WapperCom count={count} setCount={handelCount} />
+      </div>
+    );
   };
 };
-
 export default HOC;

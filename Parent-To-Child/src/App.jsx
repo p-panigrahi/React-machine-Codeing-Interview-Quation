@@ -1,11 +1,12 @@
+import React from "react";
 import Parent from "./component/Parent";
 
-function App() {
+const App = () => {
   return (
-    <>
+    <div>
       <Parent />
-    </>
+    </div>
   );
-}
+};
 
 export default App;

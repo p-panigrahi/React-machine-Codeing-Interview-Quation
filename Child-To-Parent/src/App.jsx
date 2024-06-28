@@ -1,11 +1,13 @@
+import React from "react";
 import Parent from "./component/Parent";
-function App() {
+
+const App = () => {
   return (
-    <>
-      <h1>Hello World</h1>
-      <Parent/>
-    </>
+    <div>
+      <h1>Child To Parent Data Pass Example</h1>
+      <Parent />
+    </div>
   );
-}
+};
 
 export default App;

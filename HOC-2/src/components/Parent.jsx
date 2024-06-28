@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import HOC from "./HOC";
-const Parent = ({ data, handelClick }) => {
+
+const Child = ({ count, setCount }) => {
   return (
     <div>
-      {data}
-      <button onClick={handelClick}>Click Me</button>
+      <h1>I am Parent</h1>
+      <button onClick={setCount}>
+        Clicke Me To Start Your Counter Parent - {count}
+      </button>
     </div>
   );
 };
