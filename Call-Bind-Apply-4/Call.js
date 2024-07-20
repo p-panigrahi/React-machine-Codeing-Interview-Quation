@@ -19,4 +19,6 @@ function subject(sub1, sub2) {
 }
 
 // console.log(subject.call(teacher, ["Math", "English"]));
-console.log(subject.apply(teacher,["Math","English"]));
+// console.log(subject.apply(teacher,["Math","English"]));
+const result = student.getMail.bind(teacher)
+console.log(result())
