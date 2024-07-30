@@ -1,29 +1,26 @@
 import React, { useMemo, useState } from "react";
 
 const App = () => {
-  const [countOne, setCountOne] = useState(0);
-  const [countTwo, setCountTwo] = useState(0);
-
-  const IncrementOne = () => {
-    setCountOne(countOne + 1);
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const handelCount1 = () => {
+    setCount1(count1 + 1);
   };
-  const IncrementTwo = () => {
-    setCountTwo(countTwo + 1);
+  const handelCount2 = () => {
+    setCount2(count2 + 1);
   };
 
-  const isEven = useMemo(() =>{
-    console.warn('...........');
+  const isEven = useMemo(() => {
     let i = 0;
-    while(i < 2000000000) i++;
-    return countOne % 2 === 0;
-  },[countOne]);
-  
+    while (i < 299999999) i++;
+    return count1 % 2 == 0;
+  }, [count1]);
   return (
-    <>
-      <button onClick={IncrementOne}>Counter - {countOne}</button>
-      <span>{isEven?"Even":"Odd"}</span>
-      <button onClick={IncrementTwo}>Counter - {countTwo}</button>
-    </>
+    <div>
+      <button onClick={handelCount1}>Counter 1 = {count1}</button>
+      <span>{isEven ? "Even" : "Odd"}</span>
+      <button onClick={handelCount2}>Counter 2 = {count2}</button>
+    </div>
   );
 };
 
